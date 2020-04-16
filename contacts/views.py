@@ -6,6 +6,7 @@ class MakeContactObj:
 
     def __init__(self, contactObj_raw, interestObjs_raw):
         self.name = contactObj_raw.name
+        self.profile_picture = contactObj_raw.profile_picture
         self.gradyear = contactObj_raw.graduation_year
         self.branch = contactObj_raw.branch
         self.email = contactObj_raw.email

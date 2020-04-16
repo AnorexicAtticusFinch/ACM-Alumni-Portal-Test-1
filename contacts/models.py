@@ -3,6 +3,7 @@ from django.db import models
 class AlumniContact(models.Model):
 
     name = models.CharField(max_length=200, blank=False, null=False, primary_key=True)
+    profile_picture = models.FileField(upload_to="uploads/%Y/%m/%d", blank=True)
     graduation_year = models.PositiveSmallIntegerField(default=2020)
 
     CHEMICAL = "Chemical Engineering"
