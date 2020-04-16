@@ -68,6 +68,9 @@ TEMPLATES = [
     },
 ]
 
+MEDIA_URL = '/'
+MEDIA_ROOT = BASE_DIR
+
 WSGI_APPLICATION = 'AlumniPortalTest.wsgi.application'
 
 
