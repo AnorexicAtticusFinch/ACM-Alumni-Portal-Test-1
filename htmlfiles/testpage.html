@@ -13,6 +13,7 @@
         
         {% for contact in contacts %}
             <h3>{{ forloop.counter }}. {{ contact.name }}</h3>
+            <img height=100px alt="{{ contact.name }}" src={% if contact.profile_picture %}"{{ contact.profile_picture.url }}"{% else %}"uploads/genericdp.jpg"{% endif %}>
             <p>Last Updated: {{ contact.moddate }}</p>
             <p>Year of Graduation: {{ contact.gradyear }}</p>
             {% if contact.branch != "Unknown" %}
