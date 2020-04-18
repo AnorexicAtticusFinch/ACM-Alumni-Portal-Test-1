@@ -1,0 +1,43 @@
+{% for contact in contacts %}
+
+    <div>
+        <h3>{{ forloop.counter }}. {{ contact.name }}</h3>
+        <img height=100px alt="{{ contact.name }}" src={% if contact.profile_picture %}"{{ contact.profile_picture.url }}"{% else %}"uploads/genericdp.jpg"{% endif %}>
+        <p>Last Updated: {{ contact.moddate }}</p>
+        <p>Year of Graduation: {{ contact.gradyear }}</p>
+        {% if contact.branch != "Unknown" %}
+            <p>Branch: {{ contact.branch }}</p>
+        {% endif %}
+
+        {% if contact.email != "" %}
+            <p>Email: {{ contact.email }}</p>
+        {% endif %}
+        {% if contact.phnum != "" %}
+            <p>Phone Number: {{ contact.phnum }}</p>
+        {% endif %}
+        {% if contact.curcount != "" %}
+            <p>Currently Residing In: {{ contact.curcount }}</p>
+        {% endif %}
+
+        {% if contact.comp != "" %}
+           <p>Currently Employed At: {{ contact.comp }}</p>
+        {% endif %}
+
+        {% if contact.uni != "" %}
+            <p>University For Higher Studies: {{ contact.uni }}</p>
+        {% endif %}
+        {% if contact.spec != "" %}
+            <p>Specialised In: {{ contact.spec }}</p>
+        {% endif %}
+
+        {% if contact.interests|length != 0 %}
+            <p>Interested In: </p>
+            <ul>
+                {% for interest in contact.interests %}
+                    <li>{{ interest }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+{% endfor %}

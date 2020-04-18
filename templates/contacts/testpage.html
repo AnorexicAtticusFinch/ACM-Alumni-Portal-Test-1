@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html>
+    <head>
+        <title>Alumni Portal Test</title>
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <input id="search_input" type="text" name="search" placeholder="Search">
+        <div id="all_search_content">
+            {% include "contacts/search_results.html" %}
+        </div>
+        <script type="text/javascript" src="{% static "dynamic_search.js" %}"></script>
+
+    </body>
+</html>
