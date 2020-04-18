@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+from django.template.loader import render_to_string
+from django.http import JsonResponse
+
 from .models import AlumniContact, AlumniContactInterest
 
 class MakeContactObj:
@@ -43,6 +46,7 @@ def searchForQuery(query, contactObj):
 def testpage_view(request):
 
     search_queries = request.GET.get("search", "")
+    print(search_queries)
 
     contactObjs_raw = AlumniContact.objects.all()
     contactObjs = []
@@ -70,4 +74,9 @@ def testpage_view(request):
         "contacts": foundContactObjs,
     }
 
-    return render(request, "testpage.html", para)
+    if request.is_ajax():
+        html = render_to_string(template_name="contacts/search_results.html", context=para)
+        data_dict = {"html_from_view": html}
+        return JsonResponse(data=data_dict, safe=False)
+
+    return render(request, "contacts/testpage.html", para)
