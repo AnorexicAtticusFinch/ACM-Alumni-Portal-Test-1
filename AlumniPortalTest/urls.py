@@ -25,5 +25,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', testpage_view, name='home')
 ]
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

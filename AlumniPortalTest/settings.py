@@ -55,7 +55,7 @@ ROOT_URLCONF = 'AlumniPortalTest.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'htmlfiles')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,9 +67,6 @@ TEMPLATES = [
         },
     },
 ]
-
-MEDIA_URL = '/'
-MEDIA_ROOT = BASE_DIR
 
 WSGI_APPLICATION = 'AlumniPortalTest.wsgi.application'
 
@@ -122,3 +119,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static/"),
+    os.path.join(BASE_DIR, "static/contacts"),
+)
+
+MEDIA_URL = '/'
+MEDIA_ROOT = BASE_DIR
