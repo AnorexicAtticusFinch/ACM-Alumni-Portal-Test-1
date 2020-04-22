@@ -2,8 +2,8 @@ const search_input = $('#search_input')
 const search_content = $('#all_search_content')
 
 const endpoint = ''
-const delay_by_in_ms = 350
-const fade_delay = 100
+const delay_by_in_ms = 300
+const fade_delay = 50
 
 let scheduled_function = false
 let prev_val = ''
